@@ -97,38 +97,80 @@ In Natural Language Processing (NLP) tasks, the following techniques are particu
 
 While step size search (e.g., Armijo conditions) is rarely applied directly in Transformer training, the following mechanisms are commonly used instead:
 
-### 1. Learning Rate Schedulers
-Transformers widely use schedulers for adaptive learning rate adjustment, such as:
-- **Linear Warmup**: Gradually increases the learning rate during initial training steps.  
-- **Learning Rate Decay**: Reduces the learning rate based on steps or loss.  
-- **Scheduling Algorithms**:
-  - AdamW + Cosine Decay: Common in the Hugging Face library.  
-  - Inverse Square Root Decay: Used in the original Transformer implementation.
+# Learning Rate Optimization Techniques for Transformers
 
-**Relevant Libraries**:
-- Hugging Face Transformers: Provides schedulers like `get_scheduler`.  
-- PyTorch: Offers `torch.optim.lr_scheduler` for learning rate adjustments.
+## Learning Rate Schedulers
+
+Transformers widely use schedulers for adaptive learning rate adjustment, such as:
+
+### Warmup and Decay Strategies
+
+- **Linear Warmup followed by Linear Decay**:
+  - Gradually increases the learning rate during initial training steps.
+  - Then linearly decreases it for the remaining steps.
+- **Learning Rate Decay**:
+  - Reduces the learning rate based on steps or loss.
+  - Helps fine-tune model convergence.
+
+### Scheduling Algorithms
+
+- **AdamW + Cosine Annealing with Warm Restarts**:
+  - Common in the Hugging Face library.
+  - Provides periodic learning rate resets.
+- **Inverse Square Root Decay**:
+  - Used in the original Transformer implementation.
+  - Effective for maintaining training stability.
+
+### Relevant Libraries
+
+- **Hugging Face Transformers**: Provides schedulers like `get_scheduler`.
+- **PyTorch**: Offers `torch.optim.lr_scheduler` for learning rate adjustments.
+
+#### Example Code:
 
 ```python
 from transformers import get_scheduler
 
+# Initialize optimizer with initial learning rate
 optimizer = torch.optim.AdamW(model.parameters(), lr=5e-5)
-scheduler = get_scheduler("linear", optimizer=optimizer, num_warmup_steps=100, num_training_steps=1000)
+
+# Configure scheduler with warmup and total steps
+scheduler = get_scheduler(
+    "linear",  # Scheduler type
+    optimizer=optimizer,
+    num_warmup_steps=100,  # Number of warmup steps
+    num_training_steps=1000  # Total training steps
+)
 ```
 
-### 2. Adaptive Learning Rates
+## Adaptive Learning Rates
 
-Using adaptive optimizers like **Adam** or **AdamW**, which automatically adjust step sizes based on gradient changes.
+Using adaptive optimizers for automatic step size adjustment based on gradient changes.
 
-#### Relevant Libraries:
-- **PyTorch**: `torch.optim.AdamW` for Transformer training.  
+### Popular Optimizers
+
+- **Adam**: Base adaptive optimizer.
+- **AdamW**: Adam with improved Weight Decay regularization.
+- **RMSprop**: Alternative adaptive learning method.
+- **Adagrad**: Adaptive gradient algorithm.
+
+### Relevant Libraries
+
+- **PyTorch**: `torch.optim.AdamW` for Transformer training.
 - **TensorFlow**: `tf.keras.optimizers.Adam` for adaptive step-size adjustments.
 
----
+## Gradient Clipping
 
-### 3. Gradient Clipping
+A technique to prevent exploding gradients by limiting their magnitude.
 
-Although not a direct step size search, **gradient clipping** limits the gradient magnitude, indirectly controlling step size.
+#### Example Code:
 
-#### Relevant Libraries:
-- **PyTorch**: `torch.nn.utils.clip_grad_norm_`.
+```python
+# Clip gradients to a maximum norm of 1.0
+torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+```
+
+### Relevant Libraries
+
+- **PyTorch**: `torch.nn.utils.clip_grad_norm_`
+- **TensorFlow**: `tf.clip_by_norm`
