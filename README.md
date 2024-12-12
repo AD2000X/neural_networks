@@ -3,10 +3,11 @@
 In Natural Language Processing (NLP) tasks, the following techniques are particularly useful for addressing common challenges:
 
 - **Activation Functions**: (Sigmoid, Leaky ReLU)  
-- **Gradient Stability**: (Gradient Clipping, L2 Regularization)  
+- **Gradient Stability**: (Gradient Clipping, L2 Regularization)
+- **Model Training**: (Backpropagation)
 - **Model Structure Improvements**: (Skip Connection, Batch Learning)  
 - **Data Preprocessing Techniques**: (Data Standardization, Normalization)  
-- **Evaluation Methods**: (NMSE, Backpropagation)
+- **Evaluation Methods**: (NMSE)
 
 ---
 
@@ -67,7 +68,7 @@ In Natural Language Processing (NLP) tasks, the following techniques are particu
 - **Gradient Clipping**: Ensures stable training, especially for long-text modeling scenarios (e.g., translation and summarization).  
 - **Data Standardization**: Improves word embedding stability, enhancing model performance.  
 - **Batch Learning**: Commonly used in NLP tasks, particularly for training on large-scale corpora.  
-- **Line Search (Armijo)**: May be applied for learning rate adjustments in large models, such as the GPT series.
+- **Line Search (Armijo)**: May be applied for learning rate adjustments in large models, such as the GPT series (see Note 1).
 
 ---
 
