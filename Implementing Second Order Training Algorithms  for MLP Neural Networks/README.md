@@ -28,7 +28,7 @@ Key steps in the implementation:
 ## Experiments
 
 ### Simple Neural Network
-A simple MLP is used to verify the correctness of the Newton's algorithm implementation.
+Newton's Algorithm with Exact Hessian Matrix
 
 ### Fully Connected Neural Network
 A network with the following architecture is trained on the sunspot series dataset:
@@ -40,23 +40,14 @@ A network with the following architecture is trained on the sunspot series datas
 ## Comparisons with Other Algorithms
 
 ### Methods Compared
-1. **Classic Backpropagation Algorithm**
-2. **Newton's Algorithm with Exact Hessian Matrix**
-3. **Newton's Algorithm with Approximate Hessian Matrix** (this implementation)
+1. **Classic Backpropagation Algorithm with Gradient Descent**
+2. **Newton's Algorithm with Approximate Hessian Matrix**
 
 ### Evaluation Metric
 Performance is measured using **Normalized Mean Squared Error (NMSE)**.
 
 ### Results Visualization
 All three methods' approximations of the sunspot series dataset are plotted together to illustrate their differences.
-
----
-
-## Usage Instructions
-
-1. Clone the repository.
-2. Run the MATLAB scripts provided to train the neural network using each method.
-3. View the plots to compare performance.
 
 ---
 
