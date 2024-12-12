@@ -54,7 +54,7 @@ All three methods' approximations of the sunspot series dataset are plotted toge
 ## References
 
 1. **Sunspot Series Dataset**:  
-   [https://www.cs.cmu.edu/afs/cs/academic/class/15782-f06/matlab/], by Dave Touretzky (modified by Nikolay Nikolaev)
+   [https://www.cs.cmu.edu/afs/cs/academic/class/15782-f06/matlab/] by Dave Touretzky (modified by Nikolay Nikolaev)
 
 2. **Related Literature**:
    - Bishop, C.M. (1995). *Neural Networks for Pattern Recognition*, Oxford University Press, Oxford, UK.  
