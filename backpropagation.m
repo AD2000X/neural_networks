@@ -34,7 +34,7 @@ original_weights_IH = weights_IH;
 original_weights_IO = weights_IO;
 original_weights_HO = weights_HO;
 
-% Training process for both sets of inputs
+% Online Learning Training process for both sets of inputs
 for phase = 1:2
     current_input = inputs(phase, :);
     current_output = desired_outputs(phase);
