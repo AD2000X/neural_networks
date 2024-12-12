@@ -28,7 +28,7 @@ Key steps in the implementation:
 ## Experiments
 
 ### Simple Neural Network
-Newton's Algorithm with Exact Hessian Matrix
+Newton's Algorithm with Exact Hessian Matrix in Skip Connection
 
 ### Fully Connected Neural Network
 A network with the following architecture is trained on the sunspot series dataset:
