@@ -6,6 +6,9 @@
   - **Input Layer (1 layer):** Contains 2 neurons.
   - **Hidden Layer (1 layer):** Contains 3 neurons.
   - **Output Layer (1 layer):** Contains 1 neuron.
+  - **Feedforward and backpropagation:** Core methodologies used for training.
+  - **Skip connection:** Enhances gradient flow and potentially accelerates training.
+  - **Weight constraints:** Introduces sparsity in connections for focused learning.
 
 ## Training Methodology
 - **Weight Initialization:** 
@@ -48,8 +51,4 @@
 ### **Weight Constraints**
 - Certain weights (e.g., `weights_IH(1,3)` and `weights_IH(2,1)`) are set to zero, indicating that specific inputs do not influence certain hidden neurons.
 
-## Key Concepts Summary
-- **Three-layer structure:** Input layer → Hidden layer → Output layer.
-- **Feedforward and backpropagation:** Core methodologies used for training.
-- **Skip connection:** Enhances gradient flow and potentially accelerates training.
-- **Weight constraints:** Introduces sparsity in connections for focused learning.
+
