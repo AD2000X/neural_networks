@@ -93,11 +93,11 @@ In Natural Language Processing (NLP) tasks, the following techniques are particu
 
 ---
 
-## Note 1: Step Size Adjustment in Transformer Models
+# Note 1: Step Size Adjustment in Transformer Models
 
 While step size search (e.g., Armijo conditions) is rarely applied directly in Transformer training, the following mechanisms are commonly used instead:
 
-# Learning Rate Optimization Techniques for Transformers
+## Learning Rate Optimization Techniques for Transformers
 
 ### Learning Rate Schedulers
 
