@@ -99,11 +99,11 @@ While step size search (e.g., Armijo conditions) is rarely applied directly in T
 
 # Learning Rate Optimization Techniques for Transformers
 
-## Learning Rate Schedulers
+### Learning Rate Schedulers
 
 Transformers widely use schedulers for adaptive learning rate adjustment, such as:
 
-### Warmup and Decay Strategies
+#### Warmup and Decay Strategies
 
 - **Linear Warmup followed by Linear Decay**:
   - Gradually increases the learning rate during initial training steps.
@@ -112,7 +112,7 @@ Transformers widely use schedulers for adaptive learning rate adjustment, such a
   - Reduces the learning rate based on steps or loss.
   - Helps fine-tune model convergence.
 
-### Scheduling Algorithms
+#### Scheduling Algorithms
 
 - **AdamW + Cosine Annealing with Warm Restarts**:
   - Common in the Hugging Face library.
@@ -121,12 +121,12 @@ Transformers widely use schedulers for adaptive learning rate adjustment, such a
   - Used in the original Transformer implementation.
   - Effective for maintaining training stability.
 
-### Relevant Libraries
+#### Relevant Libraries
 
 - **Hugging Face Transformers**: Provides schedulers like `get_scheduler`.
 - **PyTorch**: Offers `torch.optim.lr_scheduler` for learning rate adjustments.
 
-#### Example Code:
+##### Example Code:
 
 ```python
 from transformers import get_scheduler
@@ -143,34 +143,34 @@ scheduler = get_scheduler(
 )
 ```
 
-## Adaptive Learning Rates
+### Adaptive Learning Rates
 
 Using adaptive optimizers for automatic step size adjustment based on gradient changes.
 
-### Popular Optimizers
+#### Popular Optimizers
 
 - **Adam**: Base adaptive optimizer.
 - **AdamW**: Adam with improved Weight Decay regularization.
 - **RMSprop**: Alternative adaptive learning method.
 - **Adagrad**: Adaptive gradient algorithm.
 
-### Relevant Libraries
+#### Relevant Libraries
 
 - **PyTorch**: `torch.optim.AdamW` for Transformer training.
 - **TensorFlow**: `tf.keras.optimizers.Adam` for adaptive step-size adjustments.
 
-## Gradient Clipping
+### Gradient Clipping
 
 A technique to prevent exploding gradients by limiting their magnitude.
 
-#### Example Code:
+##### Example Code:
 
 ```python
 # Clip gradients to a maximum norm of 1.0
 torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
 ```
 
-### Relevant Libraries
+#### Relevant Libraries
 
 - **PyTorch**: `torch.nn.utils.clip_grad_norm_`
 - **TensorFlow**: `tf.clip_by_norm`
