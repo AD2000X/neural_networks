@@ -55,12 +55,3 @@ All three methods' approximations of the sunspot series dataset are plotted toge
 
 1. **Sunspot Series Dataset**:  
    [https://www.cs.cmu.edu/afs/cs/academic/class/15782-f06/matlab/] by Dave Touretzky (modified by Nikolay Nikolaev)
-
-2. **Related Literature**:
-   - Bishop, C.M. (1995). *Neural Networks for Pattern Recognition*, Oxford University Press, Oxford, UK.  
-     - pp. 150-160: Approximations of the Hessian matrix (R-propagation algorithm)  
-     - pp. 253-290: Second-order training algorithms (in Chapter 7: Parameter Optimization)  
-   - Nabney, I. (2002). *Netlab: Algorithms for Pattern Recognition*, Springer series Advances in Pattern Recognition.  
-     - pp. 160-163: Fast Multiplication by the Hessian (R-propagation algorithm)  
-   - Haykin, Simon (1999). *Neural Networks: A Comprehensive Foundation*, Second Edition, Prentice-Hall, Inc., New Jersey.  
-     - pp. 234-235: Newton’s algorithm
