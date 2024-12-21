@@ -85,7 +85,8 @@ for phase = 1:2
     for j = 1:NHID
         weights_HO(j) = weights_HO(j) + lr * output_error * hidden_outputs(j);
     end
-    
+
+    % Weights pruning
     weights_IH(1,3) = 0;
     weights_IH(2,1) = 0;
     
