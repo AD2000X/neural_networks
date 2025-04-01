@@ -1,4 +1,4 @@
-# Neural Network Summary
+# Neural Networks Summary
 
 In Natural Language Processing (NLP) tasks, the following techniques are particularly useful for addressing common challenges:
 
